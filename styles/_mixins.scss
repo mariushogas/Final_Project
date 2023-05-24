@@ -1,0 +1,8 @@
+@mixin images($screenType) {
+  @for $contor from 1 through 8 {
+    &:nth-of-type(#{$contor}) {
+      $image: nth($images, $contor);
+      background-image: url("../images/#{$screenType}/image-#{$image}.jpg");
+    }
+  }
+}

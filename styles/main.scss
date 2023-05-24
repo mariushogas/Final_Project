@@ -1,0 +1,415 @@
+@import "colors";
+@import "spacings";
+@import "typography";
+@import "base";
+
+// @import "mixins";
+
+.hero {
+  background-image: url("../images/bg-image.png");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+
+  header {
+    // position: relative;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 0.5px solid $veryDarkGrey;
+    padding: 45px 0;
+    margin: 0;
+
+    // .hamburger-lines {
+    //   // width: 20%;
+    // }
+
+    .logo {
+      width: 60%;
+      text-align: center;
+    }
+
+    .cart {
+      color: $white;
+      background-color: transparent;
+      border: none;
+      height: 20px;
+      display: block;
+      padding: 0;
+    }
+  }
+
+  .new-product {
+    position: absolute;
+    height: 350px;
+    text-align: center;
+    top: 46%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 2 * $containerSpacing);
+
+    h1 {
+      color: $white;
+      margin: 0;
+      padding: 0;
+      font-family: "Montagu Slab", serif;
+      font-weight: 500;
+      font-size: 48px;
+      letter-spacing: 1.5px;
+    }
+
+    h3 {
+      color: $darkGrey;
+      letter-spacing: 10px;
+    }
+
+    p {
+      color: $darkGrey;
+      margin-bottom: 25px;
+    }
+
+    .see-product {
+      background-color: $alpha;
+      color: $white;
+      font-family: "Manrope", sans-serif;
+      font-size: $baseSpacing;
+      width: 200px;
+      height: 55px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+    }
+  }
+}
+
+.products {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 40px;
+  margin: 0;
+
+  h3 {
+    margin-top: 25px;
+  }
+
+  .cameraBodies {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 220px;
+    position: relative;
+
+    .product-img {
+      width: 35%;
+      background-color: transparent;
+    }
+
+    .shop {
+      font-size: $baseSpacing;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: $darkGrey;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    .product-bgd {
+      position: absolute;
+      top: 25%;
+      border-radius: 10px;
+      height: 150px;
+      background-color: #f4f5fa;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+
+  .cameraLenses {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 220px;
+    margin-top: $baseSpacing;
+    position: relative;
+
+    .product-img {
+      width: 35%;
+      background-color: transparent;
+    }
+
+    .shop {
+      font-size: $baseSpacing;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: $darkGrey;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    .product-bgd {
+      position: absolute;
+      top: 25%;
+      border-radius: 10px;
+      height: 150px;
+      background-color: #f4f5fa;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+
+  .accessories {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 220px;
+    margin-top: $baseSpacing;
+    position: relative;
+
+    .product-img {
+      width: 30%;
+      background-color: transparent;
+    }
+
+    .shop {
+      font-size: $baseSpacing;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: $darkGrey;
+      padding: 0;
+      margin-bottom: 15px;
+    }
+
+    .product-bgd {
+      position: absolute;
+      top: 25%;
+      border-radius: 10px;
+      height: 160px;
+      background-color: #f4f5fa;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+}
+
+.product-GM-lens {
+  background-color: $alpha;
+  border-radius: 10px;
+  background-image: url(../images/product-GM-lens.png);
+  background-position: top;
+  background-position-y: 6%;
+  background-size: 250px 250px;
+  background-repeat: no-repeat;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - (2 * $containerSpacing));
+  margin-top: 120px;
+  position: relative;
+
+  .bigCircle {
+    position: absolute;
+    top: 0;
+    width: 330px;
+    height: 330px;
+    border: 1px solid white;
+    border-radius: 50%;
+    opacity: 0.3;
+  }
+
+  .smallCircle {
+    position: absolute;
+    top: 2.5%;
+    width: 290px;
+    height: 290px;
+    border: 1px solid white;
+    border-radius: 50%;
+    opacity: 0.3;
+  }
+
+  .container {
+    height: 55%;
+    position: absolute;
+    top: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+
+    h2 {
+      color: $white;
+      margin: 0;
+      padding: 0;
+      font-family: "Montagu Slab", serif;
+      font-weight: 500;
+      font-size: 40px;
+      letter-spacing: 1px;
+    }
+
+    .see-product {
+      background-color: $black;
+      color: $white;
+      font-family: "Manrope", sans-serif;
+      font-size: $baseSpacing;
+      width: 200px;
+      height: 55px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+    }
+  }
+}
+
+.product-SSM-lens {
+  background-color: #d8d8e9;
+  background-image: url(/images/product-SSM-lens.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 45vh;
+  border-radius: 10px;
+  background-size: contain;
+  text-align: center;
+  width: calc(100% - (2 * $containerSpacing));
+  margin-top: 20px;
+
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+
+    h3 {
+      color: $black;
+      margin: 0;
+      padding: 0;
+      font-family: "Montagu Slab", serif;
+      font-weight: bold;
+      font-size: 30px;
+      letter-spacing: 1px;
+    }
+    .see-product {
+      background-color: transparent;
+      border: 1px solid $black;
+      color: $black;
+      font-family: "Manrope", sans-serif;
+      font-size: $baseSpacing;
+      font-weight: bold;
+      width: 200px;
+      height: 55px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+  }
+}
+
+.product-flash {
+  text-align: center;
+  width: calc(100% - (2 * $containerSpacing));
+  margin-top: 20px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .flash-img {
+    background-image: url(../images/product-flash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    height: 40%;
+  }
+
+  .container {
+    background-color: #f4f5fa;
+    border-radius: 10px;
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    h3 {
+      color: $black;
+      margin: 0;
+      padding: 0;
+      font-family: "Montagu Slab", serif;
+      font-weight: bold;
+      font-size: 30px;
+      letter-spacing: 1px;
+    }
+
+    .see-product {
+      background-color: transparent;
+      border: 1px solid $black;
+      color: $black;
+      font-family: "Manrope", sans-serif;
+      font-size: $baseSpacing;
+      font-weight: bold;
+      width: 200px;
+      height: 55px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+  }
+}
+
+.about-alphacamera {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 120px;
+
+  .about-img {
+    background-image: url(../images/about-alpha.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    height: 40%;
+  }
+
+  p {
+    color: $darkGrey;
+    line-height: 25px;
+  }
+
+  h3 {
+    color: $black;
+    margin: 0;
+    padding: 0;
+    font-family: "Manrope", sans-serif;
+    // font-family: "Montagu Slab", serif;
+    font-weight: bold;
+    font-size: 30px;
+    letter-spacing: 1px;
+  }
+}
