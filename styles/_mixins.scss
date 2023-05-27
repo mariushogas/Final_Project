@@ -1,3 +1,8 @@
+@import "colors";
+@import "spacings";
+@import "typography";
+@import "base";
+
 @mixin images($screenType) {
   @for $contor from 1 through 8 {
     &:nth-of-type(#{$contor}) {
@@ -5,4 +10,14 @@
       background-image: url("../images/#{$screenType}/image-#{$image}.jpg");
     }
   }
+}
+
+@mixin see-product-details {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: $baseSpacing;
+  font-weight: 700;
+  width: $xxxlSpacing;
+  height: 55px;
+  letter-spacing: 2px;
+  cursor: pointer;
 }

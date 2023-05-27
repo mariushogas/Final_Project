@@ -16,22 +16,22 @@
 
 <body>
   <section class="hero">
-    <div class="container">
+    <div class="container ">
       <header>
-        <button class="hamburger-lines">
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-        </button>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
         <a href="/" class="logo">
           <img class="logo-img" src="images/logo/logo-no-background.png" alt="AlphaCamera Logo" />
         </a>
         <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Bodies</a></li>
-            <li><a href="#">Lenses</a></li>
-            <li><a href="#">Accessories</a></li>
+          <ul class="nav-menu">
+            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Bodies</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Lenses</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Accessories</a></li>
           </ul>
         </nav>
         <button class="cart">
@@ -51,24 +51,35 @@
   <section class="products">
     <div class="container">
       <div class="cameraBodies">
-        <img class="product-img" src="images/cameraBody.png" alt="">
+        <img class="product-img" src="images/cameraBody.png" alt="CameraBodies Image">
         <h3>Camera bodies</h3>
         <span class="shop">
           Shop
+          <span class="arrow">
+            ▶
+          </span>
         </span>
         <span class="product-bgd"></span>
       </div>
       <div class="cameraLenses">
-        <img class="product-img" src="images/cameraLenses.png" alt="">
+        <img class="product-img" src="images/cameraLenses.png" alt="CameraLens Image">
         <h3>Camera Lenses</h3>
-        <span class="shop">Shop</span>
+        <span class="shop">
+          Shop
+          <span class="arrow">
+            ▶
+          </span>
+        </span>
         <span class="product-bgd"></span>
       </div>
       <div class="accessories">
-        <img class="product-img" src="images/accessories.png" alt="">
+        <img class="product-img" src="images/accessories.png" alt="Accessories Image">
         <h3>Accessories</h3>
         <span class="shop">
           Shop
+          <span class="arrow">
+            ▶
+          </span>
         </span>
         <span class="product-bgd"></span>
       </div>
@@ -80,7 +91,7 @@
     <div class="bigCircle"></div>
     <div class="smallCircle"></div>
     <div class="container">
-      <h2>G-Master FE 12-24mm GM lens</h2>
+      <h2>G-Master <br> FE 12-24mm GM lens</h2>
       <p>The ultra-wide 12-mm angle of view available with this versatile, makes it possible to emphasize distance and
         create dynamic perspectives that are beyond the scope of the human eye</p>
       <button class="see-product">SEE PRODUCT</button>
@@ -89,7 +100,7 @@
 
   <section class="product-SSM-lens">
     <div class="container">
-      <h3>G-SSM II <br> 70-200mm</h3>
+      <h2>G-SSM II <br> 70-200mm</h2>
       <button class="see-product">SEE PRODUCT</button>
     </div>
   </section>
@@ -97,17 +108,16 @@
   <section class="product-flash">
     <div class="flash-img"></div>
     <div class="container">
-      <h3>Hvl-F60RM FLASH</h3>
+      <h2>Hvl-GN60RM FLASH</h2>
       <button class="see-product">SEE PRODUCT</button>
     </div>
   </section>
 
   <section class="about-alphacamera">
-
-
+    <div class="about-img"></div>
     <div class="container">
-      <div class="about-img"></div>
-      <h3>We help you to create your <br><span style="color:#eb5523">best</span> memories and capture them</h3>
+
+      <h3> create your <br><span style="color:#eb5523">best</span> memories and capture them</h3>
       <p>Serving satisfied customers for over 40 years, AlphaCamera have a full line of amateur & professional
         photography equipment.
         Cameras, lenses, tripods, camera bags, binoculars and more.
@@ -116,6 +126,48 @@
         Come into AlphaCamera for a real shopping experience!</p>
     </div>
   </section>
+
+  <footer>
+    <div class="container">
+
+      <a href="/" class="logo">
+        <img class="logo-img" src="images/logo/logo-no-background.png" alt="AlphaCamera Logo" />
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Bodies</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Lenses</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Accessories</a></li>
+        </ul>
+      </nav>
+
+      <p>Customer-first is AlphaCamera primary policy. WE pride ourselves on our helpful, pleasant and knowledgeable
+        staff of professional photographers. From the moment you walk onto our sales floor, one of our salespeople will
+        be there to assist you with whatever question you mai have. You can be confident that one of our highly trained
+        and experienced staff will have all the answers.</p>
+
+      <p>
+        ©2023 AlphaCamera. All right reserved.
+      </p>
+
+      <ul class="social">
+        <li><a href="#">
+            <i class="fa-brands fa-facebook fa-xl"></i>
+          </a></li>
+        <li><a href="#">
+            <i class="fa-brands fa-twitter fa-xl"></i>
+          </a></li>
+        <li><a href="#">
+            <i class="fa-brands fa-instagram fa-xl"></i>
+          </a></li>
+      </ul>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
 </body>
 
 </html>

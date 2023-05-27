@@ -2,8 +2,7 @@
 @import "spacings";
 @import "typography";
 @import "base";
-
-// @import "mixins";
+@import "mixins";
 
 .hero {
   background-image: url("../images/bg-image.png");
@@ -13,36 +12,102 @@
   position: relative;
 
   header {
-    // position: relative;
     width: 100%;
-    height: 80px;
+    min-height: $sectionSpacing;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     border-bottom: 0.5px solid $veryDarkGrey;
-    padding: 45px 0;
     margin: 0;
+    // position: relative;
 
-    // .hamburger-lines {
-    //   // width: 20%;
-    // }
+    .nav-link {
+      transition: 0.5s ease;
+
+      &:hover {
+        color: $alpha;
+      }
+    }
+
+    .bar {
+      display: block;
+      width: $marginSpacing;
+      height: 3px;
+      margin: 5px auto;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      background-color: $white;
+    }
+
+    .hamburger {
+      display: block;
+      cursor: pointer;
+
+      &.active .bar:nth-child(1) {
+        transform: translateY($smallSpacing) rotate(45deg);
+        background-color: $alpha;
+      }
+      &.active .bar:nth-child(2) {
+        opacity: 0;
+        transition: 1.5s ease-in-out;
+        transform: translateX(20px);
+      }
+      &.active .bar:nth-child(3) {
+        transform: translateY(-$smallSpacing) rotate(-45deg);
+        background-color: $alpha;
+      }
+    }
+
+    .nav-menu {
+      position: absolute;
+      left: -100%;
+      top: $sectionSpacing;
+      gap: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: $black;
+      width: 100%;
+      height: calc(100vh - $sectionSpacing);
+      text-align: center;
+      transition: 0.5s;
+      z-index: 2;
+      //   gap: $xlSpacing;
+    }
+
+    .nav-item {
+      margin: $mediumSpacing 0;
+    }
+    .nav-menu.active {
+      left: 0;
+    }
 
     .logo {
-      width: 60%;
+      max-width: 100%;
+      height: auto;
       text-align: center;
+      display: flex;
+      justify-content: center;
+
+      &-img {
+        width: 60%;
+      }
     }
 
     .cart {
-      color: $white;
       background-color: transparent;
       border: none;
-      height: 20px;
-      display: block;
+      color: $white;
       padding: 0;
+
+      &:hover {
+        color: $alpha;
+        cursor: pointer;
+        transition: 0.5s ease;
+      }
     }
   }
-
   .new-product {
     position: absolute;
     height: 350px;
@@ -50,41 +115,36 @@
     top: 46%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: calc(100% - 2 * $containerSpacing);
 
     h1 {
       color: $white;
-      margin: 0;
-      padding: 0;
       font-family: "Montagu Slab", serif;
       font-weight: 500;
-      font-size: 48px;
-      letter-spacing: 1.5px;
+      font-size: $largeSpacing;
     }
 
     h3 {
       color: $darkGrey;
-      letter-spacing: 10px;
+      font-family: "Nunito Sans", sans-serif;
+      font-size: $marginSpacing;
+      letter-spacing: $smallSpacing;
     }
+  }
 
-    p {
-      color: $darkGrey;
-      margin-bottom: 25px;
-    }
+  .see-product {
+    background-color: $alpha;
+    border: none;
+    border-radius: $smallSpacing;
+    color: $white;
+    @include see-product-details;
 
-    .see-product {
-      background-color: $alpha;
+    &:hover {
+      background-color: $alphahover;
       color: $white;
-      font-family: "Manrope", sans-serif;
-      font-size: $baseSpacing;
-      width: 200px;
-      height: 55px;
-      letter-spacing: 2px;
-      cursor: pointer;
-      border: none;
-      border-radius: 8px;
+      transition: 0.5s ease;
     }
   }
 }
@@ -94,11 +154,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 40px;
+  padding-top: $largeSpacing;
   margin: 0;
 
   h3 {
-    margin-top: 25px;
+    color: $black;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: $baseSpacing;
+    font-weight: bolder;
+    margin-top: $marginSpacing;
   }
 
   .cameraBodies {
@@ -108,7 +172,7 @@
     align-items: center;
     text-align: center;
     width: 100%;
-    height: 220px;
+    height: $xxxlSpacing;
     position: relative;
 
     .product-img {
@@ -117,20 +181,37 @@
     }
 
     .shop {
-      font-size: $baseSpacing;
+      font-size: 14px;
       font-weight: 700;
       letter-spacing: 1px;
+      text-transform: uppercase;
       color: $darkGrey;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 0;
-      margin-bottom: 20px;
+      margin-bottom: $marginSpacing;
+
+      .arrow {
+        color: $alpha;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 0 $smallSpacing;
+      }
+
+      &:hover {
+        color: $alpha;
+        cursor: pointer;
+        transition: 0.5s ease;
+      }
     }
 
     .product-bgd {
       position: absolute;
       top: 25%;
-      border-radius: 10px;
+      border-radius: $smallSpacing;
       height: 150px;
-      background-color: #f4f5fa;
+      background-color: $lightGrey;
       width: 100%;
       z-index: -1;
     }
@@ -143,7 +224,7 @@
     align-items: center;
     text-align: center;
     width: 100%;
-    height: 220px;
+    height: $xxxlSpacing;
     margin-top: $baseSpacing;
     position: relative;
 
@@ -153,20 +234,37 @@
     }
 
     .shop {
-      font-size: $baseSpacing;
+      font-size: 14px;
       font-weight: 700;
       letter-spacing: 1px;
+      text-transform: uppercase;
       color: $darkGrey;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 0;
-      margin-bottom: 20px;
+      margin-bottom: $marginSpacing;
+
+      .arrow {
+        color: $alpha;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 0 $smallSpacing;
+      }
+
+      &:hover {
+        color: $alpha;
+        cursor: pointer;
+        transition: 0.5s ease;
+      }
     }
 
     .product-bgd {
       position: absolute;
       top: 25%;
-      border-radius: 10px;
+      border-radius: $smallSpacing;
       height: 150px;
-      background-color: #f4f5fa;
+      background-color: $lightGrey;
       width: 100%;
       z-index: -1;
     }
@@ -175,11 +273,11 @@
   .accessories {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
     width: 100%;
-    height: 220px;
+    height: $xxxlSpacing;
     margin-top: $baseSpacing;
     position: relative;
 
@@ -187,22 +285,38 @@
       width: 30%;
       background-color: transparent;
     }
-
     .shop {
-      font-size: $baseSpacing;
+      font-size: 14px;
       font-weight: 700;
       letter-spacing: 1px;
+      text-transform: uppercase;
       color: $darkGrey;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 0;
-      margin-bottom: 15px;
+      margin-bottom: $marginSpacing;
+
+      .arrow {
+        color: $alpha;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 0 $smallSpacing;
+      }
+
+      &:hover {
+        color: $alpha;
+        cursor: pointer;
+        transition: 0.5s ease;
+      }
     }
 
     .product-bgd {
       position: absolute;
       top: 25%;
-      border-radius: 10px;
+      border-radius: $smallSpacing;
       height: 160px;
-      background-color: #f4f5fa;
+      background-color: $lightGrey;
       width: 100%;
       z-index: -1;
     }
@@ -211,10 +325,10 @@
 
 .product-GM-lens {
   background-color: $alpha;
-  border-radius: 10px;
+  border-radius: $smallSpacing;
   background-image: url(../images/product-GM-lens.png);
   background-position: top;
-  background-position-y: 6%;
+  background-position-y: 7%;
   background-size: 250px 250px;
   background-repeat: no-repeat;
   height: 100vh;
@@ -224,14 +338,14 @@
   justify-content: space-between;
   align-items: center;
   width: calc(100% - (2 * $containerSpacing));
-  margin-top: 120px;
+  margin-top: $sectionSpacing;
   position: relative;
 
   .bigCircle {
     position: absolute;
     top: 0;
-    width: 330px;
-    height: 330px;
+    width: 350px;
+    height: 350px;
     border: 1px solid white;
     border-radius: 50%;
     opacity: 0.3;
@@ -239,9 +353,9 @@
 
   .smallCircle {
     position: absolute;
-    top: 2.5%;
-    width: 290px;
-    height: 290px;
+    top: 3%;
+    width: 300px;
+    height: 300px;
     border: 1px solid white;
     border-radius: 50%;
     opacity: 0.3;
@@ -253,46 +367,48 @@
     top: 40%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    padding: 0 10px;
+    padding: 0 $baseSpacing;
 
     h2 {
       color: $white;
-      margin: 0;
-      padding: 0;
       font-family: "Montagu Slab", serif;
       font-weight: 500;
-      font-size: 40px;
-      letter-spacing: 1px;
+      font-size: $mediumSpacing;
+    }
+
+    p {
+      color: $white;
     }
 
     .see-product {
       background-color: $black;
-      color: $white;
-      font-family: "Manrope", sans-serif;
-      font-size: $baseSpacing;
-      width: 200px;
-      height: 55px;
-      letter-spacing: 2px;
-      cursor: pointer;
       border: none;
-      border-radius: 8px;
+      border-radius: $smallSpacing;
+      color: $white;
+      @include see-product-details;
+
+      &:hover {
+        background-color: $veryDarkGrey;
+        color: $white;
+        transition: 0.5s ease;
+      }
     }
   }
 }
 
 .product-SSM-lens {
-  background-color: #d8d8e9;
+  background-color: $grey;
   background-image: url(/images/product-SSM-lens.png);
   background-position: center;
   background-repeat: no-repeat;
   height: 45vh;
-  border-radius: 10px;
+  border-radius: $smallSpacing;
   background-size: contain;
   text-align: center;
   width: calc(100% - (2 * $containerSpacing));
-  margin-top: 20px;
+  margin-top: $marginSpacing;
 
   .container {
     height: 100%;
@@ -300,29 +416,25 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 0;
+    padding: $mediumSpacing 0;
 
-    h3 {
+    h2 {
       color: $black;
-      margin: 0;
-      padding: 0;
       font-family: "Montagu Slab", serif;
-      font-weight: bold;
-      font-size: 30px;
-      letter-spacing: 1px;
+      font-size: $fontSpacing;
     }
     .see-product {
       background-color: transparent;
       border: 1px solid $black;
+      border-radius: $smallSpacing;
       color: $black;
-      font-family: "Manrope", sans-serif;
-      font-size: $baseSpacing;
-      font-weight: bold;
-      width: 200px;
-      height: 55px;
-      letter-spacing: 2px;
-      cursor: pointer;
-      border-radius: 8px;
+      @include see-product-details;
+
+      &:hover {
+        background-color: $black;
+        color: $white;
+        transition: 0.5s ease;
+      }
     }
   }
 }
@@ -330,8 +442,8 @@
 .product-flash {
   text-align: center;
   width: calc(100% - (2 * $containerSpacing));
-  margin-top: 20px;
-  height: 400px;
+  margin-top: $marginSpacing;
+  height: 420px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -341,75 +453,136 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 10px;
-    height: 40%;
+    border-radius: $smallSpacing;
+    height: $xxxlSpacing;
   }
 
   .container {
-    background-color: #f4f5fa;
-    border-radius: 10px;
-    height: 190px;
+    background-color: $lightGrey;
+    border-radius: $smallSpacing;
+    height: $xxxlSpacing;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 
-    h3 {
+    h2 {
       color: $black;
-      margin: 0;
-      padding: 0;
       font-family: "Montagu Slab", serif;
-      font-weight: bold;
-      font-size: 30px;
-      letter-spacing: 1px;
+      font-size: $fontSpacing;
     }
 
     .see-product {
       background-color: transparent;
       border: 1px solid $black;
+      border-radius: $smallSpacing;
       color: $black;
-      font-family: "Manrope", sans-serif;
-      font-size: $baseSpacing;
-      font-weight: bold;
-      width: 200px;
-      height: 55px;
-      letter-spacing: 2px;
-      cursor: pointer;
-      border-radius: 8px;
+      @include see-product-details;
+
+      &:hover {
+        background-color: $black;
+        color: $white;
+        transition: 0.5s ease;
+      }
     }
   }
 }
 
 .about-alphacamera {
-  height: 100vh;
+  height: 800px;
+  margin-top: $sectionSpacing;
+  padding-bottom: $largeSpacing;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding-top: 120px;
+  justify-content: center;
 
   .about-img {
-    background-image: url(../images/about-alpha.png);
+    background-image: url(../images/about-alpha1.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 10px;
+    border-radius: $smallSpacing;
     height: 40%;
+    width: calc(100% - (2 * $containerSpacing));
   }
 
-  p {
-    color: $darkGrey;
-    line-height: 25px;
+  .container {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    h3 {
+      color: $black;
+      font-family: "Nunito Sans", sans-serif;
+      font-size: $fontSpacing;
+    }
+
+    p {
+      color: $veryDarkGrey;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+footer {
+  padding: $mediumSpacing 0;
+  background-color: $black;
+  height: 100vh;
+  position: relative;
+
+  .logo {
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    &-img {
+      width: 60%;
+    }
   }
 
-  h3 {
-    color: $black;
-    margin: 0;
-    padding: 0;
-    font-family: "Manrope", sans-serif;
-    // font-family: "Montagu Slab", serif;
-    font-weight: bold;
-    font-size: 30px;
-    letter-spacing: 1px;
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: $baseSpacing;
+    position: relative;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: $mediumSpacing;
+    text-transform: uppercase;
+  }
+
+  .nav-link {
+    transition: 0.5s ease;
+
+    &:hover {
+      color: $alpha;
+    }
+  }
+
+  .social {
+    margin-top: $baseSpacing;
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+
+    .fa-brands:hover {
+      transition: 1s ease;
+      color: $alpha;
+    }
   }
 }
