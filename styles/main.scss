@@ -4,115 +4,117 @@
 @import "base";
 @import "mixins";
 
-.hero {
-  background-image: url("../images/bg-image.png");
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  position: relative;
+header {
+  background-color: $black;
+  width: 100%;
+  min-height: $sectionSpacing;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid $veryDarkGrey;
+  padding: 0 $containerSpacing;
 
-  header {
-    width: 100%;
-    min-height: $sectionSpacing;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 0.5px solid $veryDarkGrey;
-    margin: 0;
-    // position: relative;
+  .nav-link {
+    transition: 0.5s ease;
 
-    .nav-link {
-      transition: 0.5s ease;
-
-      &:hover {
-        color: $alpha;
-      }
-    }
-
-    .bar {
-      display: block;
-      width: $marginSpacing;
-      height: 3px;
-      margin: 5px auto;
-      -webkit-transition: all 0.3s ease-in-out;
-      transition: all 0.3s ease-in-out;
-      background-color: $white;
-    }
-
-    .hamburger {
-      display: block;
-      cursor: pointer;
-
-      &.active .bar:nth-child(1) {
-        transform: translateY($smallSpacing) rotate(45deg);
-        background-color: $alpha;
-      }
-      &.active .bar:nth-child(2) {
-        opacity: 0;
-        transition: 1.5s ease-in-out;
-        transform: translateX(20px);
-      }
-      &.active .bar:nth-child(3) {
-        transform: translateY(-$smallSpacing) rotate(-45deg);
-        background-color: $alpha;
-      }
-    }
-
-    .nav-menu {
-      position: absolute;
-      left: -100%;
-      top: $sectionSpacing;
-      gap: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      background-color: $black;
-      width: 100%;
-      height: calc(100vh - $sectionSpacing);
-      text-align: center;
-      transition: 0.5s;
-      z-index: 2;
-      //   gap: $xlSpacing;
-    }
-
-    .nav-item {
-      margin: $mediumSpacing 0;
-    }
-    .nav-menu.active {
-      left: 0;
-    }
-
-    .logo {
-      max-width: 100%;
-      height: auto;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-
-      &-img {
-        width: 60%;
-      }
-    }
-
-    .cart {
-      background-color: transparent;
-      border: none;
-      color: $white;
-      padding: 0;
-
-      &:hover {
-        color: $alpha;
-        cursor: pointer;
-        transition: 0.5s ease;
-      }
+    &:hover {
+      color: $alpha;
     }
   }
+
+  .bar {
+    display: block;
+    width: $marginSpacing;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: $white;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+
+    &.active .bar:nth-child(1) {
+      transform: translateY($smallSpacing) rotate(45deg);
+      background-color: $alpha;
+    }
+    &.active .bar:nth-child(2) {
+      opacity: 0;
+      transition: 1.5s ease-in-out;
+      transform: translateX(20px);
+    }
+    &.active .bar:nth-child(3) {
+      transform: translateY(-$smallSpacing) rotate(-45deg);
+      background-color: $alpha;
+    }
+  }
+
+  .nav-menu {
+    position: absolute;
+    left: -100%;
+    top: $sectionSpacing;
+    gap: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: $black;
+    width: 100%;
+    height: calc(100vh - $sectionSpacing);
+    text-align: center;
+    transition: 0.5s;
+    z-index: 2;
+    //   gap: $xlSpacing;
+  }
+
+  .nav-item {
+    margin: $mediumSpacing 0;
+  }
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .logo {
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    &-img {
+      width: 60%;
+    }
+  }
+
+  .cart {
+    background-color: transparent;
+    border: none;
+    color: $white;
+    padding: 0;
+
+    &:hover {
+      color: $alpha;
+      cursor: pointer;
+      transition: 0.5s ease;
+    }
+  }
+}
+
+.hero {
+  background-image: url("../images/bg-image.png");
+  background-position: top;
+  background-size: cover;
+  height: calc(100vh - $sectionSpacing);
+  width: 100%;
+  position: relative;
+
   .new-product {
     position: absolute;
-    height: 350px;
+    height: 300px;
     text-align: center;
-    top: 46%;
+    top: 40%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -132,6 +134,10 @@
       font-size: $marginSpacing;
       letter-spacing: $smallSpacing;
     }
+
+    p {
+      width: 350px;
+    }
   }
 
   .see-product {
@@ -139,6 +145,10 @@
     border: none;
     border-radius: $smallSpacing;
     color: $white;
+    position: absolute;
+    bottom: $sectionSpacing;
+    left: 50%;
+    transform: translateX(-50%);
     @include see-product-details;
 
     &:hover {
@@ -400,8 +410,8 @@
 
 .product-SSM-lens {
   background-color: $grey;
-  background-image: url(/images/product-SSM-lens.png);
-  background-position: center;
+  background-image: url(/images//product-SSM-lens.jpg);
+  background-position: right;
   background-repeat: no-repeat;
   height: 45vh;
   border-radius: $smallSpacing;
@@ -409,14 +419,19 @@
   text-align: center;
   width: calc(100% - (2 * $containerSpacing));
   margin-top: $marginSpacing;
+  position: relative;
 
   .container {
-    height: 100%;
+    height: 60%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: $mediumSpacing 0;
+    position: absolute;
+    top: 20%;
+    left: 40%;
 
     h2 {
       color: $black;
@@ -425,7 +440,7 @@
     }
     .see-product {
       background-color: transparent;
-      border: 1px solid $black;
+      border: 2px solid $black;
       border-radius: $smallSpacing;
       color: $black;
       @include see-product-details;
@@ -474,7 +489,7 @@
 
     .see-product {
       background-color: transparent;
-      border: 1px solid $black;
+      border: 2px solid $black;
       border-radius: $smallSpacing;
       color: $black;
       @include see-product-details;
